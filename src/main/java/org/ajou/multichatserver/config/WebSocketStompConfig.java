@@ -2,6 +2,7 @@ package org.ajou.multichatserver.config;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.ajou.multichatserver.common.interceptor.ClientInboundChannelInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
@@ -19,7 +20,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @RequiredArgsConstructor
 public class WebSocketStompConfig implements WebSocketMessageBrokerConfigurer {
 
-    //private final ClientInboundChannelInterceptor clientInboundChannelInterceptor;
+    private final ClientInboundChannelInterceptor clientInboundChannelInterceptor;
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
@@ -29,7 +30,7 @@ public class WebSocketStompConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public final void configureClientInboundChannel(ChannelRegistration registration) {
-       // registration.interceptors(clientInboundChannelInterceptor);
+       registration.interceptors(clientInboundChannelInterceptor);
     }
 
     @Override
