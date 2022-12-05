@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: multi-chat-server
+  main:
+    allow-circular-references: true
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        default_batch_fetch_size: 1000
+  jwt:
+    issuer: mcs
+    accessToken:
+      header: accessToken
+      expiry-seconds: 1800
+    refreshToken:
+      header: refreshToken
+      expiry-seconds: 604800
+    blacklistPrefix: BlackList_AccessToken_
+    client-secret: mcs-local-secret
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    throw-exception-if-no-handler-found: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
