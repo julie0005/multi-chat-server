@@ -1,8 +1,6 @@
 spring:
   application:
     name: multi-chat-server
-  main:
-    allow-circular-references: true
   jpa:
     open-in-view: false
     properties:
