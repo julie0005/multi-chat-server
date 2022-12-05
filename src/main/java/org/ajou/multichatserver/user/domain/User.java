@@ -4,15 +4,24 @@ import static org.ajou.multichatserver.config.ErrorCode.*;
 import static org.springframework.util.StringUtils.hasText;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.util.regex.Pattern;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.ajou.multichatserver.config.BaseEntity;
-import org.ajou.multichatserver.config.exception.AuthErrorException;
-import org.ajou.multichatserver.config.exception.InvalidRequestException;
+import org.ajou.multichatserver.common.exception.AuthErrorException;
+import org.ajou.multichatserver.common.exception.InvalidRequestException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+@Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
+@Table(name = "users")
 public class User extends BaseEntity {
     private static final String EMAIL_REGEX = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
 

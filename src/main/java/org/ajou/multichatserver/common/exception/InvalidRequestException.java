@@ -1,4 +1,4 @@
-package org.ajou.multichatserver.config.exception;
+package org.ajou.multichatserver.common.exception;
 
 import lombok.Getter;
 import org.ajou.multichatserver.config.ErrorCode;
