@@ -1,7 +1,12 @@
 package org.ajou.multichatserver.jwt;
 
 import static java.util.Objects.isNull;
-import static org.ajou.multichatserver.common.ErrorCode.*;
+import static org.ajou.multichatserver.common.ErrorCode.BLACKLIST_TOKEN_REQUEST;
+import static org.ajou.multichatserver.common.ErrorCode.INVALID_REFRESH_TOKEN_REQUEST;
+import static org.ajou.multichatserver.common.ErrorCode.REDIS_TOKEN_NOT_FOUND;
+import static org.ajou.multichatserver.common.ErrorCode.TOKEN_EXPIRED;
+import static org.ajou.multichatserver.common.ErrorCode.TOKEN_NOT_EXPIRED;
+import static org.ajou.multichatserver.common.ErrorCode.TOKEN_USER_ID_NOT_MATCHED;
 
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import java.time.Duration;

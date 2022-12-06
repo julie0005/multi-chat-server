@@ -2,10 +2,10 @@ package org.ajou.multichatserver.socket;
 
 import java.lang.reflect.Type;
 import java.util.concurrent.CompletableFuture;
-import org.springframework.messaging.simp.stomp.StompFrameHandler;
 import org.springframework.messaging.simp.stomp.StompHeaders;
+import org.springframework.messaging.simp.stomp.StompSessionHandlerAdapter;
 
-public class MessageFrameHandler<T> implements StompFrameHandler {
+public class MessageFrameHandler<T> extends StompSessionHandlerAdapter {
 
     private final CompletableFuture<T> completableFuture = new CompletableFuture<>();
 

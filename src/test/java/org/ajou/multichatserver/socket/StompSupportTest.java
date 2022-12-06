@@ -2,6 +2,7 @@ package org.ajou.multichatserver.socket;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -66,21 +67,24 @@ public class StompSupportTest {
 
     private final String testPassword = "test1234!";
 
-    private String testUserAccessToken;
-
     private final AuthenticationManager authenticationManager;
 
     private Channel testChannel;
 
+    private final ObjectMapper objectMapper;
+
     @Autowired
     public StompSupportTest(ChannelService channelService, UserService userService, ChatService chatService,
-                            AuthenticationManager authenticationManager) {
+                            AuthenticationManager authenticationManager, ObjectMapper objectMapper) {
         this.channelService = channelService;
         this.userService = userService;
         this.chatService = chatService;
         this.authenticationManager = authenticationManager;
+        this.objectMapper = objectMapper;
         this.websocketClient = new WebSocketStompClient(new SockJsClient(createTransport()));
-        this.websocketClient.setMessageConverter(new MappingJackson2MessageConverter());
+        MappingJackson2MessageConverter messageConverter = new MappingJackson2MessageConverter();
+        messageConverter.setObjectMapper(objectMapper);
+        this.websocketClient.setMessageConverter(messageConverter);
     }
 
     @BeforeAll

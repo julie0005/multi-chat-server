@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import org.ajou.multichatserver.common.ApiResponse;
 import org.ajou.multichatserver.jwt.JwtAuthenticationToken;
 import org.ajou.multichatserver.jwt.JwtPrincipal;
-import org.ajou.multichatserver.jwt.JwtService;
 import org.ajou.multichatserver.user.domain.User;
 import org.ajou.multichatserver.user.dto.request.UserSignInRequest;
 import org.ajou.multichatserver.user.dto.request.UserSignUpRequest;

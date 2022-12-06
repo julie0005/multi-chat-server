@@ -1,8 +1,9 @@
 package org.ajou.multichatserver.user.service;
 
-import static org.ajou.multichatserver.common.ErrorCode.*;
+import static org.ajou.multichatserver.common.ErrorCode.LOGIN_PARAM_REQUIRED;
+import static org.ajou.multichatserver.common.ErrorCode.USER_ALREADY_EXISTS;
+import static org.ajou.multichatserver.common.ErrorCode.USER_NOT_FOUND;
 import static org.springframework.util.StringUtils.hasText;
-
 
 import lombok.RequiredArgsConstructor;
 import org.ajou.multichatserver.common.exception.AlreadyExistsException;

@@ -18,8 +18,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.ajou.multichatserver.channel.domain.Channel;
-import org.ajou.multichatserver.common.exception.InvalidRequestException;
 import org.ajou.multichatserver.common.BaseEntity;
+import org.ajou.multichatserver.common.exception.InvalidRequestException;
 import org.ajou.multichatserver.user.domain.User;
 
 @Entity

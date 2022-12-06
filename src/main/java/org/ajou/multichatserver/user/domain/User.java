@@ -1,6 +1,9 @@
 package org.ajou.multichatserver.user.domain;
 
-import static org.ajou.multichatserver.common.ErrorCode.*;
+import static org.ajou.multichatserver.common.ErrorCode.INVALID_ACCOUNT_REQUEST;
+import static org.ajou.multichatserver.common.ErrorCode.INVALID_INPUT_VALUE;
+import static org.ajou.multichatserver.common.ErrorCode.INVALID_LENGTH;
+import static org.ajou.multichatserver.common.ErrorCode.MISSING_REQUEST_PARAMETER;
 import static org.springframework.util.StringUtils.hasText;
 
 import jakarta.persistence.Column;

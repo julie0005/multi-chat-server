@@ -1,6 +1,7 @@
 package org.ajou.multichatserver.chat.service;
 
-import static org.ajou.multichatserver.common.ErrorCode.*;
+import static org.ajou.multichatserver.common.ErrorCode.CHAT_NOT_FOUND;
+
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.ajou.multichatserver.channel.domain.Channel;

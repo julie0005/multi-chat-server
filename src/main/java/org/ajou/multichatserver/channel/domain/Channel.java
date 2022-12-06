@@ -13,8 +13,8 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.ajou.multichatserver.common.exception.InvalidRequestException;
 import org.ajou.multichatserver.common.BaseEntity;
+import org.ajou.multichatserver.common.exception.InvalidRequestException;
 
 @Entity
 @Table(name = "channel")
