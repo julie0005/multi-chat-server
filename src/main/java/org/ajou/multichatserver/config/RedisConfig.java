@@ -2,9 +2,9 @@ package org.ajou.multichatserver.config;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.ajou.multichatserver.common.listener.ChatSubscriber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,10 +33,12 @@ public class RedisConfig {
 
     @Bean
     public RedisMessageListenerContainer redisMessageListenerContainer(
-            RedisConnectionFactory connectionFactory
+            RedisConnectionFactory connectionFactory,
+            MessageListenerAdapter chatListenerAdapter
     ){
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
+        container.addMessageListener(chatListenerAdapter, new ChannelTopic(CHAT_TOPIC_NAME));
         return container;
     }
 
@@ -47,6 +49,11 @@ public class RedisConfig {
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(String.class));
         return redisTemplate;
+    }
+
+    @Bean
+    public MessageListenerAdapter chatListenerAdapter(ChatSubscriber subscriber) {
+        return new MessageListenerAdapter(subscriber, "onMessage");
     }
 
 }

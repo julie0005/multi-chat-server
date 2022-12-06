@@ -21,6 +21,7 @@ public enum ErrorCode {
     UNAUTHENTICATED_USER(401, "C011", "인증되지 않은 사용자입니다."),
 
     CHANNEL_NOT_FOUND(500, "CNL001", "채널을 찾을 수 없습니다."),
+
     /**
      * User Domain
      */

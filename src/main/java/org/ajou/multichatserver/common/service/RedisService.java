@@ -1,8 +1,10 @@
 package org.ajou.multichatserver.common.service;
 
 import java.time.Duration;
+import org.ajou.multichatserver.chat.dto.ChatResponse;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.data.redis.listener.ChannelTopic;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -33,7 +35,7 @@ public class RedisService {
         redisTemplate.delete(key);
     }
 
-//    public void publishChatMessage(ChannelTopic topic, ChatResponse message) {
-//        redisTemplate.convertAndSend(topic.getTopic(), message);
-//    }
+    public void publishChatMessage(ChannelTopic topic, ChatResponse message) {
+        redisTemplate.convertAndSend(topic.getTopic(), message);
+    }
 }
