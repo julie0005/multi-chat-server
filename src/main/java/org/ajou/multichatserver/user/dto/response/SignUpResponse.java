@@ -1,8 +1,8 @@
-package com.paran.aplay.user.dto.response;
+package org.ajou.multichatserver.user.dto.response;
 
-import com.paran.aplay.user.domain.User;
 import lombok.Builder;
 import lombok.Getter;
+import org.ajou.multichatserver.user.domain.User;
 
 @Getter
 @Builder

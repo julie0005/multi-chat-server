@@ -1,4 +1,4 @@
-package org.ajou.multichatserver.config;
+package org.ajou.multichatserver.common;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;

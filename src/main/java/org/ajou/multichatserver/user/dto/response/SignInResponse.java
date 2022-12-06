@@ -1,4 +1,4 @@
-package com.paran.aplay.user.dto.response;
+package org.ajou.multichatserver.user.dto.response;
 
 import lombok.Builder;
 import lombok.Getter;

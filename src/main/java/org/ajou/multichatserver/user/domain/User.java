@@ -14,7 +14,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.ajou.multichatserver.config.BaseEntity;
+import org.ajou.multichatserver.common.BaseEntity;
 import org.ajou.multichatserver.common.exception.AuthErrorException;
 import org.ajou.multichatserver.common.exception.InvalidRequestException;
 import org.springframework.security.crypto.password.PasswordEncoder;

@@ -1,6 +1,6 @@
-package com.paran.aplay.user.dto.request;
+package org.ajou.multichatserver.user.dto.request;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

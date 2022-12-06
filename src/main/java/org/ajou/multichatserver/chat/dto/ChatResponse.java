@@ -17,8 +17,6 @@ public class ChatResponse {
 
   private Long messageId;
 
-  private String type;
-
   private String senderName;
 
   private Long channelId;

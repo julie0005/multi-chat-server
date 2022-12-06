@@ -14,7 +14,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.ajou.multichatserver.common.exception.InvalidRequestException;
-import org.ajou.multichatserver.config.BaseEntity;
+import org.ajou.multichatserver.common.BaseEntity;
 
 @Entity
 @Table(name = "channel")
