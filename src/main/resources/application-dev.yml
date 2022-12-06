@@ -15,5 +15,5 @@ spring:
     client-secret: mcs-dev-secret
   data:
     redis:
-      host: localhost
+      host: chat-redis.3i2cec.ng.0001.apn2.cache.amazonaws.com
       port: 6379
