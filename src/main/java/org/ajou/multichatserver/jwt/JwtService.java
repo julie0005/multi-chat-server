@@ -1,7 +1,7 @@
 package org.ajou.multichatserver.jwt;
 
 import static java.util.Objects.isNull;
-import static org.ajou.multichatserver.config.ErrorCode.*;
+import static org.ajou.multichatserver.common.ErrorCode.*;
 
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import java.time.Duration;

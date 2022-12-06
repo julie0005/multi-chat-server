@@ -1,6 +1,6 @@
 package org.ajou.multichatserver.common.exception;
 
-import org.ajou.multichatserver.config.ErrorCode;
+import org.ajou.multichatserver.common.ErrorCode;
 
 public class NoSuchElementException extends RuntimeException {
 

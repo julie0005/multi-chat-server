@@ -1,4 +1,4 @@
-package org.ajou.multichatserver.config;
+package org.ajou.multichatserver.common;
 
 import lombok.Getter;
 
@@ -20,6 +20,7 @@ public enum ErrorCode {
     ACCESS_DENIED(403, "C010", "요청 권한이 없습니다."),
     UNAUTHENTICATED_USER(401, "C011", "인증되지 않은 사용자입니다."),
 
+    CHANNEL_NOT_FOUND(500, "CNL001", "채널을 찾을 수 없습니다."),
     /**
      * User Domain
      */

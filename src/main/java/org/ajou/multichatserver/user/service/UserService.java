@@ -1,6 +1,6 @@
 package org.ajou.multichatserver.user.service;
 
-import static org.ajou.multichatserver.config.ErrorCode.*;
+import static org.ajou.multichatserver.common.ErrorCode.*;
 import static org.springframework.util.StringUtils.hasText;
 
 

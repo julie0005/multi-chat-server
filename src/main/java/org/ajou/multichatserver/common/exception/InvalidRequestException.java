@@ -1,7 +1,7 @@
 package org.ajou.multichatserver.common.exception;
 
 import lombok.Getter;
-import org.ajou.multichatserver.config.ErrorCode;
+import org.ajou.multichatserver.common.ErrorCode;
 
 @Getter
 public class InvalidRequestException extends RuntimeException {

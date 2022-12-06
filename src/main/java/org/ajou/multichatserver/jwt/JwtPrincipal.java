@@ -1,8 +1,8 @@
 package org.ajou.multichatserver.jwt;
 
 import static java.util.Objects.isNull;
-import static org.ajou.multichatserver.config.ErrorCode.EMAIL_REQUIRED;
-import static org.ajou.multichatserver.config.ErrorCode.USER_PARAM_REQUIRED;
+import static org.ajou.multichatserver.common.ErrorCode.EMAIL_REQUIRED;
+import static org.ajou.multichatserver.common.ErrorCode.USER_PARAM_REQUIRED;
 import static org.springframework.util.StringUtils.hasText;
 
 import java.security.Principal;
