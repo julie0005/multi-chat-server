@@ -1,4 +1,4 @@
-name: earth-github-action-test CD
+name: CI/CD to ElasticBeanstalk
 
 on:
   push:
