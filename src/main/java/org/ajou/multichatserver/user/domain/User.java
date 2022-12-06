@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.util.regex.Pattern;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.ajou.multichatserver.config.BaseEntity;
@@ -45,7 +46,8 @@ public class User extends BaseEntity {
     @Column(length = MAX_PASSWORD_LENGTH)
     private String password;
 
-    public User(String email, String name, String password) {
+    @Builder
+    public User(String email, String name, String encodedPassword) {
         if (!hasText(email)) {
             throw new InvalidRequestException(MISSING_REQUEST_PARAMETER);
         }
@@ -55,10 +57,10 @@ public class User extends BaseEntity {
 
         validateEmail(email);
         validateName(name);
-        validatePassword(password);
 
         this.name = name;
         this.email = email;
+        this.password = encodedPassword;
     }
 
     private static void validateName(String name) {

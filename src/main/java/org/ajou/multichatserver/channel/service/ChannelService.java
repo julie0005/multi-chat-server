@@ -25,4 +25,10 @@ public class ChannelService {
     public void validateChannelId(Long channelId) {
         if (!channelRepository.existsById(channelId)) throw new NoSuchElementException(CHANNEL_NOT_FOUND);
     }
+
+    @Transactional
+    public Channel createChannel(String name) {
+        Channel newChannel = new Channel(name);
+        return channelRepository.save(newChannel);
+    }
 }

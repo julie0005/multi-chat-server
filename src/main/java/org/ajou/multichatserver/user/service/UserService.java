@@ -5,9 +5,11 @@ import static org.springframework.util.StringUtils.hasText;
 
 
 import lombok.RequiredArgsConstructor;
+import org.ajou.multichatserver.common.exception.AlreadyExistsException;
 import org.ajou.multichatserver.common.exception.InvalidRequestException;
 import org.ajou.multichatserver.common.exception.NoSuchElementException;
 import org.ajou.multichatserver.user.domain.User;
+import org.ajou.multichatserver.user.dto.request.UserSignUpRequest;
 import org.ajou.multichatserver.user.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -39,6 +41,23 @@ public class UserService {
         User user = this.getUserByEmail(principal);
         user.checkPassword(passwordEncoder, credentials);
         return user;
+    }
+
+    @Transactional
+    public User signUp(UserSignUpRequest request) {
+        if (userRepository.existsByEmail(request.getEmail())) {
+            throw new AlreadyExistsException(USER_ALREADY_EXISTS);
+        }
+        //TODO: 이메일 인증 로직
+
+        User.validatePassword(request.getPassword());
+
+        User newUser = User.builder()
+                .name(request.getName())
+                .email(request.getEmail())
+                .encodedPassword(passwordEncoder.encode(request.getPassword()))
+                .build();
+        return userRepository.save(newUser);
     }
 
 }

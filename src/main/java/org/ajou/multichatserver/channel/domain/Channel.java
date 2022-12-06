@@ -14,13 +14,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.ajou.multichatserver.common.exception.InvalidRequestException;
+import org.ajou.multichatserver.config.BaseEntity;
 
 @Entity
 @Table(name = "channel")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Slf4j
-public class Channel {
+public class Channel extends BaseEntity {
     public static final String defaultName = "일반";
 
     @Id
