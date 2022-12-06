@@ -6,6 +6,10 @@ spring:
     properties:
       hibernate:
         default_batch_fetch_size: 1000
+        format_sql: true
+    show-sql: false
+    hibernate:
+      ddl-auto: update
   jwt:
     issuer: mcs
     accessToken:
@@ -24,3 +28,8 @@ spring:
     redis:
       host: localhost
       port: 6379
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root1234
+    url: jdbc:mysql://localhost:3306/multi-chat-server
